@@ -101,6 +101,7 @@ jobs:
       - name: Deploy to Railway
         run: |
           # Add your Railway deployment commands here
-          RAILWAY_TOKEN=$RAILWAY_TOKEN railway up
+          RAILWAY_TOKEN=$RAILWAY_TOKEN railway up --service $RAILWAY_SERVICE
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_SERVICE: ${{secrets.RAILWAY_SERVICE}}
