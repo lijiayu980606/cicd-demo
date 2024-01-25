@@ -99,6 +99,6 @@ jobs:
       - name: Deploy to Railway
         run: |
           # Add your Railway deployment commands here
-          railway run "mvn spring-boot:run"
+          RAILWAY_TOKEN=$RAILWAY_TOKEN railway up
         env:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
